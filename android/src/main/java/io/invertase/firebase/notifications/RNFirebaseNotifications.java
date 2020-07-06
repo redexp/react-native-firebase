@@ -118,8 +118,8 @@ public class RNFirebaseNotifications extends ReactContextBaseJavaModule implemen
   }
 
   @ReactMethod
-  public void removeDeliveredNotification(String notificationId, Promise promise) {
-    notificationManager.removeDeliveredNotification(notificationId, promise);
+  public void removeDeliveredNotification(String notificationId, String tag, Promise promise) {
+    notificationManager.removeDeliveredNotification(notificationId, tag, promise);
   }
 
   @ReactMethod

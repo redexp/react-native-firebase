@@ -287,8 +287,9 @@ export default class Notifications extends ModuleBase {
   /**
    * Remove a delivered notification.
    * @param notificationId
+   * @param tag
    */
-  removeDeliveredNotification(notificationId: string): Promise<void> {
+  removeDeliveredNotification(notificationId: string, tag: string = null): Promise<void> {
     if (!notificationId) {
       return Promise.reject(
         new Error(
@@ -296,12 +297,13 @@ export default class Notifications extends ModuleBase {
         )
       );
     }
-    return getNativeModule(this).removeDeliveredNotification(notificationId);
+    return getNativeModule(this).removeDeliveredNotification(notificationId, tag);
   }
 
   /**
    * Schedule a notification
    * @param notification
+   * @param schedule
    * @returns {*}
    */
   scheduleNotification(

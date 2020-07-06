@@ -264,8 +264,8 @@ class RNFirebaseNotificationManager {
     promise.resolve(null);
   }
 
-  void removeDeliveredNotification(String notificationId, Promise promise) {
-    notificationManager.cancel(notificationId.hashCode());
+  void removeDeliveredNotification(String notificationId, String tag, Promise promise) {
+    notificationManager.cancel(tag, notificationId.hashCode());
     promise.resolve(null);
   }
 
