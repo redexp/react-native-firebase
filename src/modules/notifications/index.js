@@ -297,7 +297,10 @@ export default class Notifications extends ModuleBase {
         )
       );
     }
-    return getNativeModule(this).removeDeliveredNotification(notificationId, tag);
+
+    var n = getNativeModule(this);
+
+    return Platform.OS === 'ios' ? n.removeDeliveredNotification(notificationId) : n.removeDeliveredNotification(notificationId, tag);
   }
 
   /**
